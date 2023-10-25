@@ -1,0 +1,207 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+body{
+    height: 100px;
+    background: #3C5377;
+}
+
+.container{
+    height: 60vh;
+    width:  30vw;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    perspective: 1000px;
+    transform: translate(-50%, -50%);
+}
+
+.inbox{
+    height: 100px;
+    width:  100px;
+    position: absolute;
+    top: 170px;
+    left: 170px;
+    /* transform: translate(-50%, -50%) rotateY(30deg) rotateX(30deg); */
+    transform-style: preserve-3d;
+    animation: inanimate 10s infinite linear;
+}
+@keyframes inanimate {
+    from{
+        transform: rotateY(0deg) rotateX(33deg);
+    }
+    to{
+        transform: rotateY(359deg) rotateX(33deg);
+    }
+}
+.inbox .box{
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    color: white;
+    background: #173753;
+    border: 2px solid white;
+    font-size: 90px;
+    box-sizing: border-box;
+    position: absolute;
+    transition: all 1s;
+}
+
+.inbox #front{
+    transform: translateZ(50px);
+}
+.inbox #back{
+    transform: translateZ(-50px) rotateY(180deg);
+}
+.inbox #left{
+    right: 50px;
+    transform: rotateY(-90deg);
+}
+.inbox #right{
+    left: 50px;
+    transform: rotateY(90deg);
+}
+.inbox #top{
+    bottom: 50px;
+    transform: rotateX(90deg) rotateZ(180deg);
+}
+.inbox #bottom{
+    top: 50px;
+    transform: rotateX(-90deg) rotateY(180deg); 
+}
+
+.outbox{
+    height: 200px;
+    width:  200px;
+    position: absolute;
+    top: 130px;
+    left: 130px;
+    /* transform: translate(-50%, -50%) rotateY(30deg) rotateX(30deg); */
+    transform-style: preserve-3d;
+    animation: outanimate 10s infinite linear;
+}
+@keyframes outanimate {
+    from{
+        transform: rotateY(0deg) rotateX(33deg);
+    }
+    to{
+        transform: rotateY(359deg) rotateX(33deg);
+    }
+}
+.outbox .box{
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    color: white;
+    background: #173753;
+    border: 2px solid white;
+    font-size: 150px;
+    box-sizing: border-box;
+    position: absolute;
+    transition: all 1s;
+    opacity: .2;
+}
+
+.outbox #front{
+    transform: translateZ(100px);
+}
+.outbox #back{
+    transform: translateZ(-100px) rotateY(180deg);
+}
+.outbox #left{
+    right: 100px;
+    transform: rotateY(-90deg);
+}
+.outbox #right{
+    left: 100px;
+    transform: rotateY(90deg);
+}
+.outbox #top{
+    bottom: 100px;
+    transform: rotateX(90deg) rotateZ(180deg);
+}
+.outbox #bottom{
+    top: 100px;
+    transform: rotateX(-90deg) rotateY(180deg);
+}
+
+/* input{
+    height: 40px;
+    width: 100px;
+    background: pink;
+    border-radius: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    position: relative;
+    top: -50px;
+    left: 175px;
+} */
+
+.outbox:hover #front{
+    transform: translateZ(180px) ;
+    opacity: 0.8;
+    border-radius: 15px;
+}
+.outbox:hover #back{
+    transform: translateZ(-180px) rotateY(180deg);
+    opacity: 0.8;
+    border-radius: 15px;
+}
+.outbox:hover #left{
+    opacity: 0.8;
+    right: 180px;
+    border-radius: 15px;
+}
+.outbox:hover #right{
+    left: 180px;
+    opacity: 0.8;
+    border-radius: 15px;
+}
+.outbox:hover #top{
+    bottom: 180px;
+    opacity: 0.8;
+    border-radius: 15px;
+}
+.outbox:hover #bottom{
+    top: 180px;
+    opacity: 0.8;
+    border-radius: 15px;
+}
+/* Music */
+#audio-container {
+    display: none;
+}
+
+/* Thư */
+.msg {
+    width: 30%;
+    height: 20%;
+    margin: 15px 0px 0px 15px;
+    color: #1B264F;
+    transition: 0.5s;
+    position: absolute;
+    text-align: center;
+    border-radius: 10px;
+    background: #DBFCFF;    
+}
+
+.msg::after{
+    top: 12%;
+    width: 90%;
+    height: 90%;
+    content: "Nhìn lại dòng thời gian đánh dấu sự trưởng thành của cô bé từ tuổi 18 đến 19\A\A Và đón lấy sinh nhật tuổi 20 vui vẻ và hạnh phúc nhất nha bé❤️❤️ ";
+    font-weight: bold;
+
+    left: 5%;
+    text-align: center;
+    position: absolute;
+    border-radius: 20px;
+    transform-origin: left top;
+    white-space: pre-wrap; /* Để duy trì khoảng trắng và xuống dòng */
+    clip-path: inset(0% 0 0 0);
+}
+
+
